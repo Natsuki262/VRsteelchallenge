@@ -21,5 +21,6 @@ public class ObjectInstantiate : MonoBehaviour
     public void InstantiateObject()
     {
         Instantiate(m_prefab, transform.position, transform.rotation);
+
     }
 }
