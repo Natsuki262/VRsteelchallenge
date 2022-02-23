@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &223974227
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1006,6 +1006,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &786987986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 786987987}
+  - component: {fileID: 786987988}
+  m_Layer: 3
+  m_Name: Grab_Grip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &786987987
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786987986}
+  m_LocalRotation: {x: 0.16909142, y: 0, z: 0, w: 0.98560035}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8259165554421233152}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 19.47, y: 0, z: 0}
+--- !u!65 &786987988
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786987986}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020547867, y: 0.14917637, z: 0.056523453}
+  m_Center: {x: -0.00077724457, y: 0.043580584, z: -0.0017824171}
 --- !u!1 &821651703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,6 +1347,50 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   m_HasMigratedActions: 1
+--- !u!1 &985804440
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 985804441}
+  - component: {fileID: 985804442}
+  m_Layer: 3
+  m_Name: Slider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &985804441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985804440}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8259165554421233152}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &985804442
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985804440}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016088497, y: 0.09644413, z: 0.20381927}
+  m_Center: {x: -0.004627615, y: 0.086090446, z: 0.093011856}
 --- !u!1 &1114040580
 GameObject:
   m_ObjectHideFlags: 0
@@ -2405,5 +2493,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: M1911 Handgun_Black
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 697756091, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
+    - {fileID: 1787431307, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
+--- !u!4 &8259165554421233152 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5252445337011998587, guid: 0b06fa997e1ccf94b91ba744be309df3,
+    type: 3}
+  m_PrefabInstance: {fileID: 8259165554421233151}
+  m_PrefabAsset: {fileID: 0}
