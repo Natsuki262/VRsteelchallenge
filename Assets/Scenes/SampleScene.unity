@@ -1357,6 +1357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 985804441}
   - component: {fileID: 985804442}
+  - component: {fileID: 985804443}
   m_Layer: 3
   m_Name: Slider
   m_TagString: Untagged
@@ -1372,7 +1373,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985804440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0127}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8259165554421233152}
@@ -1391,6 +1392,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.016088497, y: 0.09644413, z: 0.20381927}
   m_Center: {x: -0.004627615, y: 0.086090446, z: 0.093011856}
+--- !u!95 &985804443
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985804440}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 76093e5a7e5d49f449000c38fe2faef4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1114040580
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,6 +2289,31 @@ MonoBehaviour:
     m_Reference: {fileID: 7779212132400271959, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_ButtonPressPoint: 0.5
+--- !u!1 &2114097086 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3660374956646291690, guid: 0b06fa997e1ccf94b91ba744be309df3,
+    type: 3}
+  m_PrefabInstance: {fileID: 8259165554421233151}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2114097088
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114097086}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6c3bccc11893e8744b745a9d76418ca5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &889874192356698051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2435,10 +2480,14 @@ PrefabInstance:
       objectReference: {fileID: 633987595}
     - target: {fileID: 167546062, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
       propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 167546062, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
       propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 167546062, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 167546062, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
@@ -2447,7 +2496,15 @@ PrefabInstance:
       objectReference: {fileID: 6690221818138554394, guid: fa7f22e0a1cffc34d94cfcaa947721f2,
         type: 3}
     - target: {fileID: 167546062, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 167546062, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
       propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 167546062, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 167546062, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
@@ -2455,7 +2512,15 @@ PrefabInstance:
       value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 167546062, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 167546062, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
       propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 167546062, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
       value: UnityEngine.AudioSource, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 167546062, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
@@ -2465,6 +2530,20 @@ PrefabInstance:
     - target: {fileID: 167546062, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
       propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 167546062, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660374956646384842, guid: 0b06fa997e1ccf94b91ba744be309df3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0941
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660374956646384842, guid: 0b06fa997e1ccf94b91ba744be309df3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 5252445337011998587, guid: 0b06fa997e1ccf94b91ba744be309df3,
         type: 3}
@@ -2529,6 +2608,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 697756091, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
     - {fileID: 1787431307, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
+    - {fileID: 5770536106655981721, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0b06fa997e1ccf94b91ba744be309df3, type: 3}
 --- !u!4 &8259165554421233152 stripped
 Transform:
