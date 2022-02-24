@@ -8,9 +8,7 @@ public class Bullet : MonoBehaviour
     float m_speed;
     Rigidbody m_rb;
     [SerializeField]
-    GameObject m_prefab;
-    [SerializeField]
-    float m_deleateTime=5;
+    float m_deleateTime = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,13 +19,20 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     /// <summary>èeíeÇâ¡ë¨Ç≥ÇπÇÈ</summary>
-   public void AddForceBullet()
+    public void AddForceBullet()
     {
-        m_rb=GetComponent<Rigidbody>();
+        m_rb = GetComponent<Rigidbody>();
         Vector3 vector = transform.forward * m_speed;
-        m_rb.AddForce(vector,ForceMode.Impulse);
+        m_rb.AddForce(vector, ForceMode.Impulse);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Target")
+        {
+            Destroy(gameObject);
+        }
     }
 }
