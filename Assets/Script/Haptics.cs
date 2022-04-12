@@ -15,8 +15,8 @@ public class Haptics : MonoBehaviour
     //コンポーネントが有効化されたときに実行
     private void OnEnable()
     {
-            //GameObjectに設定されてるXRGrabInteractableコンポーネントを取得
-            XRGrabInteractable interactable=GetComponent<XRGrabInteractable>();
+        //GameObjectに設定されてるXRGrabInteractableコンポーネントを取得
+        XRGrabInteractable interactable = GetComponent<XRGrabInteractable>();
         //Activate Action発生時に実行する処理を追加
         interactable.activated.AddListener(PullTrigger);
     }
