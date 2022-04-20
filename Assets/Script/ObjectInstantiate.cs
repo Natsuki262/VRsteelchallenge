@@ -17,7 +17,7 @@ public class ObjectInstantiate : MonoBehaviour
     {
 
     }
-    /// <summary>オブジェクト生成</summary>
+    /// <summary>オブジェクト生成zzy</summary>
     public void InstantiateObject()
     {
         Instantiate(m_prefab, transform.position, transform.rotation);
