@@ -6750,10 +6750,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 602261667}
     m_Modifications:
+    - target: {fileID: 49579572, guid: 110dbe0062b7814428e3f6921b0c613f, type: 3}
+      propertyPath: m_magazineSocket
+      value: 
+      objectReference: {fileID: 685068939}
     - target: {fileID: 1554149848, guid: 110dbe0062b7814428e3f6921b0c613f, type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 633987595}
+    - target: {fileID: 1554149848, guid: 110dbe0062b7814428e3f6921b0c613f, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554149848, guid: 110dbe0062b7814428e3f6921b0c613f, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554149848, guid: 110dbe0062b7814428e3f6921b0c613f, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 685068940}
+    - target: {fileID: 1554149848, guid: 110dbe0062b7814428e3f6921b0c613f, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554149848, guid: 110dbe0062b7814428e3f6921b0c613f, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: MagazineSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554149848, guid: 110dbe0062b7814428e3f6921b0c613f, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: HandgunController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554149848, guid: 110dbe0062b7814428e3f6921b0c613f, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7385062527359079434, guid: 110dbe0062b7814428e3f6921b0c613f,
         type: 3}
       propertyPath: m_Name
@@ -6772,7 +6804,7 @@ PrefabInstance:
     - target: {fileID: 7869710019438644912, guid: 110dbe0062b7814428e3f6921b0c613f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1278
+      value: 1.122
       objectReference: {fileID: 0}
     - target: {fileID: 7869710019438644912, guid: 110dbe0062b7814428e3f6921b0c613f,
         type: 3}
@@ -6816,6 +6848,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 110dbe0062b7814428e3f6921b0c613f, type: 3}
+--- !u!114 &685068939 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1554149848, guid: 110dbe0062b7814428e3f6921b0c613f,
+    type: 3}
+  m_PrefabInstance: {fileID: 685068938}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &685068940 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 49579572, guid: 110dbe0062b7814428e3f6921b0c613f,
+    type: 3}
+  m_PrefabInstance: {fileID: 685068938}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8068c17377f9d324eafd94cd371b4e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &703630154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 163793918875196717, guid: 1c017c1e6f9791948819c8187094374c,

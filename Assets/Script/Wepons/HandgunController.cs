@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class HandgunController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class HandgunController : MonoBehaviour
     /// <summary>銃口の位置</summary>
     [SerializeField]
     private GameObject m_muzzle;
+    [SerializeField]
+    XRSocketInteractor m_magazineSocket;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,5 +34,15 @@ public class HandgunController : MonoBehaviour
         Quaternion rotation=m_muzzle.transform.rotation;//銃口の角度を一時変数に代入
         Instantiate(prefab, position, rotation);//prefabもとにインスタンス生成
     }
-    
+    public void MagazineSelected()
+    {
+        HandgunMagazine magazine = null;
+        ///マガジンについてるグラブのスクリプトを取得
+        IXRSelectInteractable magazineInteractable = m_magazineSocket.interactablesSelected[0];
+        //ソケットに入れられたオブジェクトソケットに入れられたオブジェクトのスクリプトを取得
+        magazine = magazineInteractable.transform.GetComponent<HandgunMagazine>();
+        
+
+    }
+
 }
