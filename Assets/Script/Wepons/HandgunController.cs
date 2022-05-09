@@ -39,7 +39,7 @@ public class HandgunController : MonoBehaviour
         HandgunMagazine magazine = null;
         ///マガジンについてるグラブのスクリプトを取得
         IXRSelectInteractable magazineInteractable = m_magazineSocket.interactablesSelected[0];
-        //ソケットに入れられたオブジェクトソケットに入れられたオブジェクトのスクリプトを取得
+        //ソケットに入れられたオブジェクトのスクリプトを取得
         magazine = magazineInteractable.transform.GetComponent<HandgunMagazine>();
         
 
