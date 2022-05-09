@@ -14,9 +14,10 @@ public class Animetest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            anime.SetBool("HandControler",true);
+            Debug.Log("true");
+            anime.SetBool("b_open", true);
         }
     }
 }
