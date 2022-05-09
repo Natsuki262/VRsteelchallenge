@@ -13,36 +13,50 @@ public class HandgunController : MonoBehaviour
     private GameObject m_muzzle;
     [SerializeField]
     XRSocketInteractor m_magazineSocket;
+    HandgunMagazine m_magazine = null;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     /// <summary>
     /// 銃口の位置から弾丸を生成
     /// </summary>
-    public void BulletInstantiate()
+    private void BulletInstantiate()
     {
         GameObject prefab = m_bulletPrefab;//prefabを一時変数に代入
-        Vector3 position=m_muzzle.transform.position;//銃口の位置を一時変数に代入
-        Quaternion rotation=m_muzzle.transform.rotation;//銃口の角度を一時変数に代入
+        Vector3 position = m_muzzle.transform.position;//銃口の位置を一時変数に代入
+        Quaternion rotation = m_muzzle.transform.rotation;//銃口の角度を一時変数に代入
         Instantiate(prefab, position, rotation);//prefabもとにインスタンス生成
     }
+    /// <summary>
+    /// マガジン挿入時
+    /// </summary>
     public void MagazineSelected()
     {
-        HandgunMagazine magazine = null;
+
         ///マガジンについてるグラブのスクリプトを取得
         IXRSelectInteractable magazineInteractable = m_magazineSocket.interactablesSelected[0];
         //ソケットに入れられたオブジェクトのスクリプトを取得
-        magazine = magazineInteractable.transform.GetComponent<HandgunMagazine>();
-        
+        m_magazine = magazineInteractable.transform.GetComponent<HandgunMagazine>();
 
     }
+    /// <summary>
+    /// トリガー
+    /// </summary>
+    public void TriggerActivate()
+    {
+        if (m_magazine == null) return;
+        //残弾数が零なら発砲させない
+        if (m_magazine.BulletCount <= 0) return;
+        BulletInstantiate();
+        m_magazine.ConsumeOneShot();
 
+    }
 }

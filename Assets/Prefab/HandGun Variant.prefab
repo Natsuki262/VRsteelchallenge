@@ -232,6 +232,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 49579572}
+        m_TargetAssemblyTypeName: HandgunController, Assembly-CSharp
+        m_MethodName: MagazineSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -650,17 +662,17 @@ PrefabInstance:
     - target: {fileID: 3644862041000851635, guid: 4631337de780181238c2d92deef9c627,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.735786
+      value: 18.132
       objectReference: {fileID: 0}
     - target: {fileID: 3644862041000851635, guid: 4631337de780181238c2d92deef9c627,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.98
+      value: 1.122
       objectReference: {fileID: 0}
     - target: {fileID: 3644862041000851635, guid: 4631337de780181238c2d92deef9c627,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.066584
+      value: 17.988565
       objectReference: {fileID: 0}
     - target: {fileID: 3644862041000851635, guid: 4631337de780181238c2d92deef9c627,
         type: 3}
@@ -755,6 +767,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6891621399317722627}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &6147194668631405133
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3662609891070650679}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5289593, y: 0.69425035, z: 4.096027}
+  m_Center: {x: 8.3784e-40, y: -0.03680846, z: -1.1404097}
 --- !u!54 &8834011271450524619
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -786,6 +811,7 @@ MonoBehaviour:
   m_bulletPrefab: {fileID: 3876889948280247679, guid: d695b48ab21be4c46a7f8ee05afecaaa,
     type: 3}
   m_muzzle: {fileID: 1402636653}
+  m_magazineSocket: {fileID: 1554149848}
 --- !u!114 &7003023026800050381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -836,7 +862,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 49579572}
         m_TargetAssemblyTypeName: HandgunController, Assembly-CSharp
-        m_MethodName: BulletInstantiate
+        m_MethodName: TriggerActivate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -925,16 +951,3 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
---- !u!65 &6147194668631405133
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3662609891070650679}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5289593, y: 0.69425035, z: 4.096027}
-  m_Center: {x: 8.3784e-40, y: -0.03680846, z: -1.1404097}

@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 5943319792597358910}
   - component: {fileID: 3531989417670257595}
   - component: {fileID: 2812380206928422831}
+  - component: {fileID: 3672247754883819082}
   m_Layer: 12
   m_Name: HandGun_Magazine
   m_TagString: Untagged
@@ -259,3 +260,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.29752713, y: 1.1863674, z: 0.4771142}
   m_Center: {x: 5.9326773e-24, y: 0.5424914, z: -0.09578512}
+--- !u!114 &3672247754883819082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3784171033476249685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6564c735f670574e8f59996492cf13b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_bulletCount: 10
