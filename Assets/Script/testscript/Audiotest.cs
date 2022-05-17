@@ -7,6 +7,10 @@ public class Audiotest : MonoBehaviour
 
     [SerializeField]
    private AudioSource m_audiosource;
+   [SerializeField]
+   private AudioClip audioClip;
+   [SerializeField]
+   private AudioClip m_audioclip2;
    
     //AudioClip sound;
 
@@ -21,6 +25,11 @@ public class Audiotest : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
+            m_audiosource.PlayOneShot(audioClip);
+        }
+        if(Input.GetKey(KeyCode.X))
+        {
+            m_audiosource.clip = m_audioclip2;
             m_audiosource.Play();
         }
     }
