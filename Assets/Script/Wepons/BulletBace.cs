@@ -12,25 +12,41 @@ public class BulletBace : MonoBehaviour
     private float m_bulletSpeed;
     [SerializeField]
     private float m_bulletDamage;
-    
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         BulletMove();
-
+        BulletRaycastHit();
     }
     //’e‚ð‚Ü‚Á‚·‚®”ò‚Î‚·
     void BulletMove()
     {
-       Vector3 vector =transform.forward* m_bulletSpeed;
-        gameObject.transform.position += vector*Time.deltaTime;
-
+        Vector3 vector = transform.forward * m_bulletSpeed;
+        gameObject.transform.position += vector * Time.deltaTime;
+    }
+    void BulletRaycastHit()
+    {
+        int layerMask = (1 << 9) + (1 << 13);
+        RaycastHit bulletHit;
+        Vector3 origin = transform.position;
+        //origin = Vector3.zero;
+        Vector3 direction = transform.TransformDirection(Vector3.forward);
+        //direction = Vector3.up;
+        float maxDistance = Mathf.Infinity;
+        //maxDistance = 10;
+        bool isHit = Physics.Raycast(origin, direction, out bulletHit, maxDistance, layerMask);
+        Debug.DrawRay(origin, direction * maxDistance, Color.white,0,false);
+        if (isHit)
+        {
+            Debug.Log("hit");
+        }
     }
 }
