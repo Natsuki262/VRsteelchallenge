@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyBase : MonoBehaviour
 {
     [SerializeField]
-    private int m_HP;
+    private float m_HP;
     [SerializeField]
     private GameObject m_effectPrefab;   
    
@@ -13,8 +13,9 @@ public class EnemyBase : MonoBehaviour
     /// ƒ_ƒ[ƒW‚ğó‚¯æ‚é
     /// </summary>
     /// <param name="damage"></param>
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
+        Debug.Log(damage);
         m_HP = m_HP - damage;
         if (m_HP<=0)
         {

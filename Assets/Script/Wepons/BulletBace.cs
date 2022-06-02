@@ -7,11 +7,11 @@ public class BulletBace : MonoBehaviour
 
     //弾速
     [SerializeField]
-    private float m_bulletSpeed;
+    private float m_bulletSpeed = 0.0f;
     //弾のダメージ
     [SerializeField]
     private float m_bulletDamage;
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,15 +24,20 @@ public class BulletBace : MonoBehaviour
     {
         BulletMove();
         GameObject go;
-        go=BulletRaycastHit();
+        go = BulletRaycastHit();
         Debug.Log(go);
-        
+        SendDamage(go);
+        if (go!=null)
+        {
+            Destroy(gameObject);
+        }
+
     }
     //弾をまっすぐ飛ばす
     void BulletMove()
     {
         Vector3 vector = transform.forward * m_bulletSpeed;
-        gameObject.transform.position += vector * Time.deltaTime;
+        gameObject.transform.position += vector * Time.fixedDeltaTime;
     }
     //弾から出るRayに接触したものを返す
     GameObject BulletRaycastHit()
@@ -45,7 +50,7 @@ public class BulletBace : MonoBehaviour
         int layerMask = (1 << 9) + (1 << 13);
         Vector3 origin = transform.position;//Rayの開始地点
         Vector3 direction = transform.TransformDirection(Vector3.forward);//Rayの方向
-        float maxDistance = Mathf.Infinity;//Rayが衝突判定をする最大距離
+        float maxDistance = m_bulletSpeed * Time.fixedDeltaTime;//Rayが衝突判定をする最大距離
         bool isHit = Physics.Raycast(origin, direction, out bulletHit, maxDistance, layerMask);
         Debug.DrawRay(origin, direction * maxDistance, Color.white, 0, false);
         //Rayの描画
@@ -61,5 +66,16 @@ public class BulletBace : MonoBehaviour
             return null;
         }
 
+    }
+    /// <summary>
+    /// ダメージを与える
+    /// </summary>
+    /// <param name="hitObject"></param>
+    void SendDamage(GameObject hitObject)
+    {
+        if (hitObject == null) return;
+        EnemyBase enemyScript = hitObject.GetComponent<EnemyBase>();
+        if (enemyScript == null) return;
+        enemyScript.TakeDamage(m_bulletDamage);
     }
 }

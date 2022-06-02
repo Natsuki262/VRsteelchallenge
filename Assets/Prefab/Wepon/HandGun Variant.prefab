@@ -767,19 +767,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6891621399317722627}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &6147194668631405133
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3662609891070650679}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5289593, y: 0.69425035, z: 4.096027}
-  m_Center: {x: 8.3784e-40, y: -0.03680846, z: -1.1404097}
 --- !u!54 &8834011271450524619
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -808,7 +795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8068c17377f9d324eafd94cd371b4e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bulletPrefab: {fileID: 3876889948280247679, guid: d695b48ab21be4c46a7f8ee05afecaaa,
+  m_bulletPrefab: {fileID: 7690441421353140423, guid: 00532c82e45e361428b785818c62160f,
     type: 3}
   m_muzzle: {fileID: 1402636653}
   m_magazineSocket: {fileID: 1554149848}
@@ -951,3 +938,16 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!65 &6147194668631405133
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3662609891070650679}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5289593, y: 0.69425035, z: 4.096027}
+  m_Center: {x: 8.3784e-40, y: -0.03680846, z: -1.1404097}
