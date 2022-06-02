@@ -4,28 +4,27 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
-    public int m_HP;
     [SerializeField]
-    private GameObject m_effectPrefab;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    private int m_HP;
+    [SerializeField]
+    private GameObject m_effectPrefab;   
+   
+    /// <summary>
+    /// ƒ_ƒ[ƒW‚ğó‚¯æ‚é
+    /// </summary>
+    /// <param name="damage"></param>
     public void TakeDamage(int damage)
     {
         m_HP = m_HP - damage;
-        DestroyMyself();
+        if (m_HP<=0)
+        {
+            DestroyMyself();
+        }
 
     }
+    /// <summary>
+    /// ©•ª‚ğÁ‚·
+    /// </summary>
     private void DestroyMyself()
     {
         if (m_effectPrefab != null)
