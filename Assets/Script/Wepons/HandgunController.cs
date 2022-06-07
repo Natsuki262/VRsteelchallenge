@@ -14,6 +14,12 @@ public class HandgunController : MonoBehaviour
     [SerializeField]
     XRSocketInteractor m_magazineSocket;
     HandgunMagazine m_magazine = null;
+    [SerializeField]
+    private AudioClip m_AudioClip_Shot;
+    [SerializeField]
+    private AudioClip m_AudioClip_Enpty;
+    [SerializeField]
+    private AudioSource m_AudioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,10 +58,20 @@ public class HandgunController : MonoBehaviour
     /// </summary>
     public void TriggerActivate()
     {
-        if (m_magazine == null) return;
+        if (m_magazine == null)
+        {
+            m_AudioSource.PlayOneShot(m_AudioClip_Enpty);
+            return;
+        }
         //écíeêîÇ™óÎÇ»ÇÁî≠ñCÇ≥ÇπÇ»Ç¢
-        if (m_magazine.BulletCount <= 0) return;
+        if (m_magazine.BulletCount <= 0)
+        {
+            m_AudioSource.PlayOneShot(m_AudioClip_Enpty);
+            return;
+        }
         BulletInstantiate();
+        m_AudioSource.clip = m_AudioClip_Shot;
+        m_AudioSource.PlayOneShot(m_AudioClip_Shot);
         m_magazine.ConsumeOneShot();
 
     }

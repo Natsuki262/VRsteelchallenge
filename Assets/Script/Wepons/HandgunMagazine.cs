@@ -9,8 +9,6 @@ public class HandgunMagazine : MonoBehaviour
     /// <summary>
     /// 外部に弾の数を数を返すゲッター
     /// </summary>
-
-
     public int BulletCount
     {
         get { return m_bulletCount; }
