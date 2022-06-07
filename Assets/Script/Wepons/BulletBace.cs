@@ -70,7 +70,7 @@ public class BulletBace : MonoBehaviour
     /// <summary>
     /// ダメージを与える
     /// </summary>
-    /// <param name="hitObject"></param>
+    /// <param name="hitObject">Rayに衝突したオブジェクト</param>
     void SendDamage(GameObject hitObject)
     {
         if (hitObject == null) return;
