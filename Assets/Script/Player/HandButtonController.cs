@@ -8,7 +8,7 @@ public class HandButtonController : MonoBehaviour
     //IAはインプットアクションの略
     [SerializeField]
     private InputActionProperty m_PrimaryIA;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,23 +18,37 @@ public class HandButtonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        IsPrimaryButtonPressed();
+
+        if (IsPrimaryButtonPressed())
+        {
+            ;
+
+        }
+
     }
     private bool IsPrimaryButtonPressed()
     {
         float button = m_PrimaryIA.action.ReadValue<float>();
-        Debug.Log(button);
         if (button >= InputSystem.settings.defaultButtonPressPoint)
         {
-            Debug.Log("hit");
+            Debug.Log(button + "hit");
             return true;
         }
         else
         {
-            Debug.Log("ぬるぽ");
             return false;
-
         }
     }
+    public void GripSelected()
+    {
+
+        ///マガジンについてるグラブのスクリプトを取得
+        IXRSelectInteractable magazineInteractable = m_magazineSocket.interactablesSelected[0];
+        //ソケットに入れられたオブジェクトのスクリプトを取得
+        m_magazine = magazineInteractable.transform.GetComponent<HandgunMagazine>();
+
+    }
+
+
 
 }

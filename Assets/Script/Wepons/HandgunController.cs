@@ -20,6 +20,17 @@ public class HandgunController : MonoBehaviour
     private AudioClip m_AudioClip_Enpty;
     [SerializeField]
     private AudioSource m_AudioSource;
+    /// <summary>
+    /// emptyMagazineのPrefab
+    /// </summary>
+    [SerializeField]
+    private GameObject m_emptyMagazine;
+    /// <summary>
+    /// IAは InstantiateAreaの略
+    ///空のマガジンの生成位置
+    /// </summary>
+    [SerializeField]
+    private GameObject m_emptyMagazineIA;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +69,7 @@ public class HandgunController : MonoBehaviour
     /// </summary>
     public void TriggerActivate()
     {
+        //マガジンが装填されてなければ
         if (m_magazine == null)
         {
             m_AudioSource.PlayOneShot(m_AudioClip_Enpty);
@@ -69,10 +81,27 @@ public class HandgunController : MonoBehaviour
             m_AudioSource.PlayOneShot(m_AudioClip_Enpty);
             return;
         }
+        //発砲条件が満たしてる時
         BulletInstantiate();
-        m_AudioSource.clip = m_AudioClip_Shot;
+        //m_AudioSource.clip = m_AudioClip_Shot;
         m_AudioSource.PlayOneShot(m_AudioClip_Shot);
         m_magazine.ConsumeOneShot();
 
+    }
+    /// <summary>
+    /// 空のマガジンを射出する
+    /// </summary>
+    private void DropMagazine()
+    {
+        GameObject prefab = m_emptyMagazine;
+        Vector3 position = m_emptyMagazineIA.transform.position;//空のマガジンの生成位置を一時変数に代入
+        Quaternion rotation = m_emptyMagazineIA.transform.rotation;//空のマガジンの生成角度を一時変数に代入
+        Instantiate(prefab, position, rotation);//prefabもとにインスタンスを作成
+
+
+    }
+   public void DropButtonPushed()
+    {
+        DropMagazine();
     }
 }
