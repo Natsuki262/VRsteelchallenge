@@ -33,5 +33,13 @@ public class HandgunMagazine : MonoBehaviour
         Debug.Log(m_bulletCount);
 
     }
-
+    /// <summary>
+    /// 銃からマガジンへ弾数をセットする
+    /// </summary>
+    /// <param name="bulletCount"></param>
+    public void SetBulletCount(int bulletCount)
+    {
+        m_bulletCount = bulletCount;
+    }
+    
 }
