@@ -5,19 +5,40 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class HandgunController : MonoBehaviour
 {
-    /// <summary>弾丸のPrefab</summary>
+    /// <summary>
+    /// 弾丸のPrefabオブジェクト
+    /// </summary>
     [SerializeField]
     private GameObject m_bulletPrefab;
-    /// <summary>銃口の位置</summary>
+   /// <summary>
+   /// 弾丸を生成する銃口の位置
+   /// </summary>
     [SerializeField]
     private GameObject m_muzzle;
+    /// <summary>
+    /// マガジン挿入口のSocketInteractor
+    /// SocketInteractorとはオブジェクトが、別のオブジェクトを
+    /// 保持しておける、コンポーネントのこと
+    /// </summary>
     [SerializeField]
     XRSocketInteractor m_magazineSocket;
+    /// <summary>
+    /// マガジンを使用するために使うメンバー変数
+    /// </summary>
     HandgunMagazine m_magazine = null;
+    /// <summary>
+    /// 射撃音のクリップ
+    /// </summary>
     [SerializeField]
     private AudioClip m_AudioClip_Shot;
+    /// <summary>
+    /// 弾切れ時の音のクリップ
+    /// </summary>
     [SerializeField]
     private AudioClip m_AudioClip_Enpty;
+    /// <summary>
+    /// オーディオクリップを流すための、オーディオソース
+    /// </summary>
     [SerializeField]
     private AudioSource m_AudioSource;
     /// <summary>
