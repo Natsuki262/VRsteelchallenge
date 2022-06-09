@@ -13,14 +13,8 @@ public class HandgunMagazine : MonoBehaviour
     {
         get { return m_bulletCount; }
     }
-    /// <summary>
-    /// マガジンを持てるかをセットする
-    /// </summary>
-    /// <param name="canGrip">持てるか否か</param>
-    private void SetGripflag(bool canGrip)
-    {
-
-    }
+    
+    
     /// <summary>
     ///弾の数を１減らす
     ///※弾を減らすの処理は、マガジンから銃のスライドを引いて送る際の処理
