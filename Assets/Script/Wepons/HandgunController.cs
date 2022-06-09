@@ -51,6 +51,7 @@ public class HandgunController : MonoBehaviour
         Vector3 position = m_muzzle.transform.position;//銃口の位置を一時変数に代入
         Quaternion rotation = m_muzzle.transform.rotation;//銃口の角度を一時変数に代入
         Instantiate(prefab, position, rotation);//prefabもとにインスタンス生成
+
     }
     /// <summary>
     /// マガジン挿入時
@@ -58,12 +59,31 @@ public class HandgunController : MonoBehaviour
     public void MagazineSelected()
     {
 
-        ///マガジンについてるグラブのスクリプトを取得
-        IXRSelectInteractable magazineInteractable = m_magazineSocket.interactablesSelected[0];
-        //ソケットに入れられたオブジェクトのスクリプトを取得
-        m_magazine = magazineInteractable.transform.GetComponent<HandgunMagazine>();
+
+        //メンバー変数に、マガジンのスクリプトを代入 
+        m_magazine = GetHandgunMagazineScript();
+
+        if (m_magazine == null) return;
+
+        //挿入したマガジンのオブジェクトを非アクティブにする
+        m_magazine.gameObject.SetActive(false);
+        //ダミーのマガジンのモデルをアクティブ化する
+
+        //ソケットの機能を非アクティブにする
 
     }
+    /// <summary>
+    /// 挿入されているハンドガンマガジンのスクリプト
+    /// </summary>
+    /// <returns>ハンドガンマガジンのスクリプト</returns>
+    private HandgunMagazine GetHandgunMagazineScript()
+    {
+        ///マガジンについてるグラブのスクリプトを取得
+        IXRSelectInteractable magazineInteractable = m_magazineSocket.interactablesSelected[0];
+
+        return magazineInteractable.transform.GetComponent<HandgunMagazine>();
+    }
+
     /// <summary>
     /// トリガー
     /// </summary>
@@ -100,8 +120,9 @@ public class HandgunController : MonoBehaviour
 
 
     }
-   public void DropButtonPushed()
+    public void DropButtonPushed()
     {
+
         DropMagazine();
     }
 }

@@ -2,13 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.XR.Interaction.Toolkit;
 public class HandButtonController : MonoBehaviour
 {
     //IAはインプットアクションの略
     [SerializeField]
     private InputActionProperty m_PrimaryIA;
-    
+    /// <summary>
+    /// 手のInteractor
+    /// Interactorとは、握る、触るができるコンポーネントのこと
+    /// </summary>
+    [SerializeField]
+   private XRBaseControllerInteractor m_handInteractor;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +27,7 @@ public class HandButtonController : MonoBehaviour
 
         if (IsPrimaryButtonPressed())
         {
-            ;
+            SendPButtonPressed();
 
         }
 
@@ -39,13 +45,23 @@ public class HandButtonController : MonoBehaviour
             return false;
         }
     }
-    public void GripSelected()
+    /// <summary>
+    /// 銃に、プライマリーボタンが押されたことを、伝える
+    /// Ｐはプライマリーの略
+    /// </summary>
+    public void SendPButtonPressed()
     {
 
-        ///マガジンについてるグラブのスクリプトを取得
-        IXRSelectInteractable magazineInteractable = m_magazineSocket.interactablesSelected[0];
-        //ソケットに入れられたオブジェクトのスクリプトを取得
-        m_magazine = magazineInteractable.transform.GetComponent<HandgunMagazine>();
+        ///銃についてるグラブのスクリプトを取得
+        IXRSelectInteractable gunInteractable = 
+            m_handInteractor.interactablesSelected[0];
+
+        //ハンドガンについてるオブジェクトのスクリプトを取得
+        HandgunController handgunController = 
+            gunInteractable.transform.GetComponent<HandgunController>();
+        //ハンドガンスクリプトについてる、ボタンが押されたときに呼び出す関数を、呼び出し。
+        handgunController.DropButtonPushed();
+
 
     }
 

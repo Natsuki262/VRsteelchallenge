@@ -205,6 +205,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "DropMagazine",
+                    "type": "Button",
+                    "id": "53b6ce34-d5be-413e-9db2-dfbc84e02442",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -568,6 +577,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "UI Press Value",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d5f9affa-8f33-4360-b6d0-cb1a323fb2b6",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerLeft>{LeftHand}/primarybutton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DropMagazine",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -1097,17 +1117,6 @@
                     "name": "",
                     "id": "9ac87124-5c1a-432a-bb18-6b90e4ef73d6",
                     "path": "<OculusTouchController>{RightHand}/primaryButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DropMagazine",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "248b3ffb-21a6-4998-8552-4e23765f608b",
-                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
