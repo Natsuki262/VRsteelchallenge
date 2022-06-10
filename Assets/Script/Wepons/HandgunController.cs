@@ -10,9 +10,9 @@ public class HandgunController : MonoBehaviour
     /// </summary>
     [SerializeField]
     private GameObject m_bulletPrefab;
-   /// <summary>
-   /// 弾丸を生成する銃口の位置
-   /// </summary>
+    /// <summary>
+    /// 弾丸を生成する銃口の位置
+    /// </summary>
     [SerializeField]
     private GameObject m_muzzle;
     /// <summary>
@@ -21,7 +21,7 @@ public class HandgunController : MonoBehaviour
     /// 保持しておける、コンポーネントのこと
     /// </summary>
     [SerializeField]
-    XRSocketInteractor m_magazineSocket;
+    private XRSocketInteractor m_magazineSocket;
     /// <summary>
     /// マガジンを使用するために使うメンバー変数
     /// </summary>
@@ -52,6 +52,11 @@ public class HandgunController : MonoBehaviour
     /// </summary>
     [SerializeField]
     private GameObject m_emptyMagazineIA;
+    /// <summary>
+    /// 銃に装着されてるダミーマガジンの、オブジェクト
+    /// </summary>
+    [SerializeField]
+    private GameObject m_dummyMagazineObj;
     // Start is called before the first frame update
     void Start()
     {
@@ -68,10 +73,11 @@ public class HandgunController : MonoBehaviour
     /// </summary>
     private void BulletInstantiate()
     {
-        GameObject prefab = m_bulletPrefab;//prefabを一時変数に代入
-        Vector3 position = m_muzzle.transform.position;//銃口の位置を一時変数に代入
-        Quaternion rotation = m_muzzle.transform.rotation;//銃口の角度を一時変数に代入
-        Instantiate(prefab, position, rotation);//prefabもとにインスタンス生成
+
+        GameObject prefab = m_bulletPrefab;
+        Vector3 position = m_muzzle.transform.position;
+        Quaternion rotation = m_muzzle.transform.rotation;
+        Instantiate(prefab, position, rotation);
 
     }
     /// <summary>
@@ -81,16 +87,18 @@ public class HandgunController : MonoBehaviour
     {
 
 
-        //メンバー変数に、マガジンのスクリプトを代入 
+
         m_magazine = GetHandgunMagazineScript();
 
         if (m_magazine == null) return;
 
-        //挿入したマガジンのオブジェクトを非アクティブにする
-        m_magazine.gameObject.SetActive(false);
-        //ダミーのマガジンのモデルをアクティブ化する
 
-        //ソケットの機能を非アクティブにする
+        m_magazine.gameObject.SetActive(false); //挿入したマガジンのオブジェクトを非アクティブにする
+
+
+        m_magazineSocket.gameObject.SetActive(false); //ソケットの機能を非アクティブにする
+
+        m_dummyMagazineObj.SetActive(true);  //ダミーのマガジンのモデルをアクティブ化する
 
     }
     /// <summary>
@@ -110,40 +118,56 @@ public class HandgunController : MonoBehaviour
     /// </summary>
     public void TriggerActivate()
     {
-        //マガジンが装填されてなければ
+        //弾丸の生成条件のチェック
         if (m_magazine == null)
         {
             m_AudioSource.PlayOneShot(m_AudioClip_Enpty);
             return;
         }
-        //残弾数が零なら発砲させない
         if (m_magazine.BulletCount <= 0)
         {
             m_AudioSource.PlayOneShot(m_AudioClip_Enpty);
             return;
         }
-        //発砲条件が満たしてる時
+        //弾丸の生成をして音声を再生して終了
         BulletInstantiate();
         //m_AudioSource.clip = m_AudioClip_Shot;
         m_AudioSource.PlayOneShot(m_AudioClip_Shot);
         m_magazine.ConsumeOneShot();
 
     }
+
+
     /// <summary>
     /// 空のマガジンを射出する
     /// </summary>
     private void DropMagazine()
     {
+
         GameObject prefab = m_emptyMagazine;
-        Vector3 position = m_emptyMagazineIA.transform.position;//空のマガジンの生成位置を一時変数に代入
-        Quaternion rotation = m_emptyMagazineIA.transform.rotation;//空のマガジンの生成角度を一時変数に代入
-        Instantiate(prefab, position, rotation);//prefabもとにインスタンスを作成
+        Vector3 position = m_emptyMagazineIA.transform.position;
+        Quaternion rotation = m_emptyMagazineIA.transform.rotation;
+        Instantiate(prefab, position, rotation);
 
 
     }
+    /// <summary>
+    /// コントローラーのボタンが押されたら、DropMagazine関数を呼び出す
+    /// </summary>
     public void DropButtonPushed()
     {
+        if (m_magazine != null)
+        {
 
-        DropMagazine();
+            Destroy(m_magazine.gameObject);
+
+
+            m_magazineSocket.gameObject.SetActive(true); //ソケットの機能をアクティブにする
+
+            m_dummyMagazineObj.SetActive(false);  //ダミーのマガジンのモデルを非アクティブ化する
+            DropMagazine();
+            m_magazine = null;
+        }
+        
     }
 }
