@@ -7,7 +7,8 @@ public class EnemyBase : MonoBehaviour
     [SerializeField]
     private float m_HP;
     [SerializeField]
-    private GameObject m_effectPrefab;   
+    private GameObject m_effectPrefab;
+    
    
     /// <summary>
     /// É_ÉÅÅ[ÉWÇéÛÇØéÊÇÈ
@@ -30,8 +31,11 @@ public class EnemyBase : MonoBehaviour
     {
         if (m_effectPrefab != null)
         {
-
-            Instantiate(m_effectPrefab);
+            GameObject prefab = m_effectPrefab;
+            Vector3 position = this.gameObject.transform.position;
+           Quaternion rotation = new Quaternion();
+            Instantiate(prefab,position,rotation);
+            
         }
 
         Destroy(gameObject);
