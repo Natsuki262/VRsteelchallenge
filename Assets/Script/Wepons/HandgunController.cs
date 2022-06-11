@@ -57,6 +57,8 @@ public class HandgunController : MonoBehaviour
     /// </summary>
     [SerializeField]
     private GameObject m_dummyMagazineObj;
+    [SerializeField]
+    private Animator m_animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -156,18 +158,27 @@ public class HandgunController : MonoBehaviour
     /// </summary>
     public void DropButtonPushed()
     {
-        if (m_magazine != null)
+        if (m_magazine == null) return;
+
+        if (m_magazine.BulletCount >= 1)
         {
-
-            Destroy(m_magazine.gameObject);
-
-
-            m_magazineSocket.gameObject.SetActive(true); //ソケットの機能をアクティブにする
-
-            m_dummyMagazineObj.SetActive(false);  //ダミーのマガジンのモデルを非アクティブ化する
-            DropMagazine();
-            m_magazine = null;
+            //入ってるマガジンを射出
+            m_magazine.gameObject.SetActive(true);
         }
-        
+        else
+        {
+            Destroy(m_magazine.gameObject);
+            DropMagazine();
+        }
+
+        m_magazineSocket.gameObject.SetActive(true);
+        m_dummyMagazineObj.SetActive(false);
+        m_magazine = null;
     }
+    public void Animation()
+    {
+        m_animator.SetTrigger("Trigger");
+    }
+
+
 }
