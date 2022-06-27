@@ -34,5 +34,16 @@ public class ObjPoolCtr : MonoBehaviour
     {
         
     }
+    public GameObject GetPoolObj()
+    {
+        for (int i = 0; i < poolList.Count; i++)
+        {
+            if (true)
+            {
+
+            }
+        }
+        return poolObj;
+    }
 
 }
