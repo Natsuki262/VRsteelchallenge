@@ -59,6 +59,9 @@ public class HandgunController : MonoBehaviour
     private GameObject m_dummyMagazineObj;
     [SerializeField]
     private Animator m_animator;
+
+    [SerializeField]
+    private  ObjPoolCtr m_objPoolCtr;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,11 +78,17 @@ public class HandgunController : MonoBehaviour
     /// </summary>
     private void BulletInstantiate()
     {
-
-        GameObject prefab = m_bulletPrefab;
+        GameObject obj=m_objPoolCtr.GetPoolObj();
+        if (obj == null) { return; }
+        obj.transform.position=m_muzzle.transform.position;
+        obj.transform.rotation=m_muzzle.transform.rotation;
+        obj.SetActive(true);
+        
+        /*GameObject prefab = m_bulletPrefab;
         Vector3 position = m_muzzle.transform.position;
         Quaternion rotation = m_muzzle.transform.rotation;
-        Instantiate(prefab, position, rotation);
+        Instantiate(prefab, position, rotation);*/
+
 
     }
     /// <summary>

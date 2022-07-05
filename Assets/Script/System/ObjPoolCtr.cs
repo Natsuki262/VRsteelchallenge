@@ -38,12 +38,12 @@ public class ObjPoolCtr : MonoBehaviour
     {
         for (int i = 0; i < poolList.Count; i++)
         {
-            if (true)
+            if (poolList[i].activeInHierarchy==false)
             {
-
+                return poolList[i];
             }
         }
-        return poolObj;
+        return null;
     }
 
 }
