@@ -142,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_bulletSpeed: 27
   m_bulletDamage: 1
+  m_TrailRenderer: {fileID: 7690441421656750488}
 --- !u!1 &7690441421656750490
 GameObject:
   m_ObjectHideFlags: 0

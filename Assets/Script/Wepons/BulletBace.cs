@@ -12,12 +12,19 @@ public class BulletBace : MonoBehaviour
     [SerializeField]
     private float m_bulletDamage;
 
-
+    [SerializeField]
+    private TrailRenderer m_TrailRenderer;
     // Start is called before the first frame update
     void Start()
     {
 
     }
+  
+    public void TrailClear()
+    {
+        m_TrailRenderer.Clear();
+    }
+
 
     // Update is called once per frame
     private void FixedUpdate()
@@ -25,11 +32,13 @@ public class BulletBace : MonoBehaviour
         BulletMove();
         GameObject go;
         go = BulletRaycastHit();
-        Debug.Log(go);
+
         SendDamage(go);
-        if (go!=null)
+        if (go != null)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            this.gameObject.SetActive(false);
+
         }
 
     }
@@ -38,6 +47,8 @@ public class BulletBace : MonoBehaviour
     {
         Vector3 vector = transform.forward * m_bulletSpeed;
         gameObject.transform.position += vector * Time.fixedDeltaTime;
+
+
     }
     //弾から出るRayに接触したものを返す
     GameObject BulletRaycastHit()
@@ -58,7 +69,7 @@ public class BulletBace : MonoBehaviour
         //接触したオブジェクトを返す
         if (isHit)
         {
-            Debug.Log("hit");
+
             return bulletHit.collider.gameObject;//接触したオブジェクトを返す
         }
         else

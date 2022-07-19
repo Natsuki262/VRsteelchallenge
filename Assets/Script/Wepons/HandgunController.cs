@@ -61,7 +61,7 @@ public class HandgunController : MonoBehaviour
     private Animator m_animator;
 
     [SerializeField]
-    private  ObjPoolCtr m_objPoolCtr;
+    private ObjPoolCtr m_objPoolCtr;
     // Start is called before the first frame update
     void Start()
     {
@@ -78,12 +78,15 @@ public class HandgunController : MonoBehaviour
     /// </summary>
     private void BulletInstantiate()
     {
-        GameObject obj=m_objPoolCtr.GetPoolObj();
+        GameObject obj = m_objPoolCtr.GetPoolObj();
         if (obj == null) { return; }
-        obj.transform.position=m_muzzle.transform.position;
-        obj.transform.rotation=m_muzzle.transform.rotation;
+        obj.transform.position = m_muzzle.transform.position;
+        obj.transform.rotation = m_muzzle.transform.rotation;
         obj.SetActive(true);
-        
+        BulletBace bulletBace = obj.GetComponent<BulletBace>();
+        bulletBace.TrailClear();
+
+
         /*GameObject prefab = m_bulletPrefab;
         Vector3 position = m_muzzle.transform.position;
         Quaternion rotation = m_muzzle.transform.rotation;
@@ -125,7 +128,7 @@ public class HandgunController : MonoBehaviour
     }
 
     /// <summary>
-    /// トリガー
+    /// コントローラーのトリガーボタン押された時
     /// </summary>
     public void TriggerActivate()
     {

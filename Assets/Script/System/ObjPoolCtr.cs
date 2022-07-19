@@ -36,6 +36,7 @@ public class ObjPoolCtr : MonoBehaviour
     }
     public GameObject GetPoolObj()
     {
+        Debug.Log(poolList.Count);
         for (int i = 0; i < poolList.Count; i++)
         {
             if (poolList[i].activeInHierarchy==false)

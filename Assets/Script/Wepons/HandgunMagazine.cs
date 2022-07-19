@@ -24,7 +24,7 @@ public class HandgunMagazine : MonoBehaviour
         if (m_bulletCount <= 0) return;
 
         m_bulletCount--;
-        Debug.Log(m_bulletCount);
+        //Debug.Log(m_bulletCount);
 
     }
     /// <summary>

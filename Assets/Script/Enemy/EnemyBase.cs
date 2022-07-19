@@ -16,7 +16,7 @@ public class EnemyBase : MonoBehaviour
     /// <param name="damage"></param>
     public void TakeDamage(float damage)
     {
-        Debug.Log(damage);
+        //Debug.Log(damage);
         m_HP = m_HP - damage;
         if (m_HP<=0)
         {
