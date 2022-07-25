@@ -14,16 +14,16 @@ public class Turret : EnemyBase
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Invoke("BulletInstantiate", 1f);
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
-    private void EnemyBulletInstantiate()
+   /* private void BulletInstantiate()
     {
         GameObject obj=m_objPoolCtr.GetPoolObj();
         if (obj == null) { return; }
@@ -31,6 +31,6 @@ public class Turret : EnemyBase
         obj.transform.rotation=m_muzzle.transform.rotation;
         obj.SetActive(true);
 
-    }
+    }*/
     
 }

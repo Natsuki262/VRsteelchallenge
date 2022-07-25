@@ -8,6 +8,8 @@ public class EnemyBase : MonoBehaviour
     private float m_HP;
     [SerializeField]
     private GameObject m_effectPrefab;
+    [SerializeField]
+    private GameObject Destro;
     
    
     /// <summary>
@@ -38,6 +40,6 @@ public class EnemyBase : MonoBehaviour
             
         }
 
-        Destroy(gameObject);
+        Destroy(Destro);
     }
 }
