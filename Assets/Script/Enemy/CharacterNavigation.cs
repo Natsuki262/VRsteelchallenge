@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
-public class CharacterNavigation : MonoBehaviour
+public class CharacterNavigation :EnemyBase
 {
     [SerializeField]
     Transform[] m_points;
