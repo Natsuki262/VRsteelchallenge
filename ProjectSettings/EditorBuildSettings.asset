@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 14b32415f9a609c499b6c384fc315d4b
   - enabled: 1
+    path: Assets/Scenes/CyberHero.unity
+    guid: f8af862580643b740b14b177a8f30882
+  - enabled: 1
     path: Assets/Scenes/CyberHeroStage 1.unity
     guid: 483e56e326dfb6e4790aa38bfa89d629
   m_configObjects:

@@ -9,6 +9,6 @@ public class UIStart : MonoBehaviour
     
     public void OnPushbutton()
     {
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("CyberHero");
     }
 }
