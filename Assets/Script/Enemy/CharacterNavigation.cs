@@ -82,5 +82,6 @@ public class CharacterNavigation : EnemyBase
 
         //現在の目標地点を更新する
         m_agent.destination = m_points[m_destPoint].position;
+        Debug.Log("更新");
     }
 }
