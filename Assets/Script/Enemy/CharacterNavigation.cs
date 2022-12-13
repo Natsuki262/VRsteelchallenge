@@ -32,6 +32,9 @@ public class CharacterNavigation : EnemyBase
     /// </summary>
     private bool m_isChasing = false;
 
+    CapsuleCollider m_collider=null;
+    Transform m_defaultTarget;
+
 
 
     // Start is called before the first frame update
@@ -41,14 +44,14 @@ public class CharacterNavigation : EnemyBase
         m_agent.autoBraking = false;
         //巡回する座標ポイントが設定されている場合は、
         //次の目標地点へ移動する
-        if (m_points.Length > 0) GoNextPoint();
-
-    }
+        //if (m_points.Length > 0) GoNextPoint();
+        m_defaultTarget = m_player;
+        m_player = GameObject.FindGameObjectWithTag("Player").transform;
 
     // Update is called once per frame
     void Update()
     {
-        float ditance=Vector3.Distance(transform.position, m_player.position);
+        /*float ditance=Vector3.Distance(transform.position, m_player.position);
         if (ditance<=m_followRange)
         {
 
@@ -68,11 +71,11 @@ public class CharacterNavigation : EnemyBase
             GoNextPoint();
             
             
-        }
+        }*/
 
-        
+        Move();
     }
-    void GoNextPoint()
+    /*void GoNextPoint()
     {
         //座標ポイントが設定されていない場合なにもしない
         if (m_points.Length == 0)return;
@@ -83,5 +86,11 @@ public class CharacterNavigation : EnemyBase
         //現在の目標地点を更新する
         m_agent.destination = m_points[m_destPoint].position;
         Debug.Log("更新");
+    }*/
+    private void Move()
+    {
+        m_agent.SetDestination(m_player.position);
     }
+
 }
+
