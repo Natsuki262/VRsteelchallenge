@@ -31,6 +31,8 @@ public class CharacterNavigation : EnemyBase
     /// プレイヤーへの追跡中かどうかを表すフラグ
     /// </summary>
     private bool m_isChasing = false;
+    [SerializeField]
+    private float m_speed=0f;
 
    
 
@@ -64,6 +66,7 @@ public class CharacterNavigation : EnemyBase
     void Patrol()
 
     {
+        m_agent.speed = m_agent.speed * m_speed;
         if (Vector3.Distance(transform.position,
                 m_points[m_destPoint].position) < m_followRange)
         {
