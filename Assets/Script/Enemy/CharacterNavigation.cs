@@ -56,6 +56,7 @@ public class CharacterNavigation : EnemyBase
     }
     void FollowPlayer()
     {
+        m_agent.speed = m_agent.speed * m_speed;
         m_agent.destination = m_player.position;
         if(m_agent.isStopped)
         {
@@ -66,7 +67,7 @@ public class CharacterNavigation : EnemyBase
     void Patrol()
 
     {
-        m_agent.speed = m_agent.speed * m_speed;
+        m_agent.speed = m_agent.speed;
         if (Vector3.Distance(transform.position,
                 m_points[m_destPoint].position) < m_followRange)
         {

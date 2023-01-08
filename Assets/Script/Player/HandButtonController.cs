@@ -35,6 +35,7 @@ public class HandButtonController : MonoBehaviour
     private bool IsPrimaryButtonPressed()
     {
         float button = m_PrimaryIA.action.ReadValue<float>();
+        Debug.Log("test");
         if (button >= InputSystem.settings.defaultButtonPressPoint)
         {
             Debug.Log(button + "hit");
