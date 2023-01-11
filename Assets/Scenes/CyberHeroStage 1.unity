@@ -5741,7 +5741,7 @@ CapsuleCollider:
   m_Height: 2.2057233
   m_Direction: 1
   m_Center: {x: 0, y: 0.84731436, z: 0}
---- !u!114 &1704050998
+--- !u!114 &1704050997
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5750,22 +5750,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1704050992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8e307cbda5b84744a4ee5a2e95b1532, type: 3}
+  m_Script: {fileID: 11500000, guid: e73263d3878f4d041a4208cbaa9eab33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HP: 0
-  m_effectPrefab: {fileID: 0}
-  m_points:
-  - {fileID: 1771113116}
-  - {fileID: 1629254484}
-  - {fileID: 1649139431}
-  - {fileID: 1202567496}
-  - {fileID: 1202567496}
-  - {fileID: 88189084}
   m_agent: {fileID: 1704050993}
-  m_player: {fileID: 2062294315}
-  m_followRange: 2.5
-  m_speed: 1.2
+  m_animator: {fileID: 1704050998}
+  m_enemySpeed: 0
+--- !u!95 &1704050998 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7389507112651452681, guid: 6dc4cf4496348884d8ee27743ae38562,
+    type: 3}
+  m_PrefabInstance: {fileID: 1222345455}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1720533535
 PrefabInstance:
   m_ObjectHideFlags: 0
